@@ -20,6 +20,9 @@ def button_click(number):
     current = e.get()
     e.delete(0, END)
     e.insert(0, str(current) + str(number))
+
+def button_backspace():
+    e.delete(0, 1)
     
 
 #Function defining the click of the 'clear' button
@@ -100,6 +103,7 @@ button_multiply = Button(root, text="x", padx=40, pady=20, borderwidth=3, comman
 button_divide = Button(root, text="/", padx=40, pady=20, borderwidth=3, command=button_divide)
 button_clear = Button(root, text="clear", padx=30, pady=20, borderwidth=3, command=button_clear)
 button_equal = Button(root, text="=", padx=40, pady=20, borderwidth=3, command=button_equal)
+button_backspace = Button(root, text="←", padx=40, pady=20, borderwidth=3, command=button_backspace)
 
 
 #Placing the buttons on the main window
@@ -128,5 +132,7 @@ button_divide.grid(row=5, column=2)
 button_clear.grid(row=4, column=2)
 
 button_equal.grid(row=6, column=0, columnspan=3)
+
+button_backspace.grid(row=6, column=2)
 
 root.mainloop()
